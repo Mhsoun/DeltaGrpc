@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "CurrencyDeltaGrpc";
+
+service CurrencyDelta {
+  rpc GetCurrencyDelta (CurrencyDeltaRequest) returns (CurrencyDeltaResponse);
+}
+
+message CurrencyDeltaRequest {
+  string baseline = 1;
+  repeated string currencies = 2;
+  string from_date = 3;
+  string to_date = 4;
+}
+
+message CurrencyDeltaResponse {
+  repeated CurrencyDeltaResult results = 1;
+}
+
+message CurrencyDeltaResult {
+  string currency = 1;
+  double delta = 2;
+}
+
+message ErrorResponse {
+  string error_code = 1;
+  string error_details = 2;
+}
