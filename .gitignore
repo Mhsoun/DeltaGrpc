@@ -361,4 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/Services/CurrencyDeltaService.cs
+
+# Ignore appsettings.json to protect sensitive information
+appsettings.json
+appsettings.Development.json
+appsettings.Production.json
