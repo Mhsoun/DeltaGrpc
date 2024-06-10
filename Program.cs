@@ -26,6 +26,8 @@ app.UseHttpsRedirection();
 //app.UseAuthorization();
 
 app.MapGrpcService<CurrencyDeltaService>();
+app.MapGrpcReflectionService();
+
 app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client.");
 
 app.Run();
